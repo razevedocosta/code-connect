@@ -83,3 +83,5 @@
 {"level":"info","message":"Posts obtidos com sucesso"}
 {"level":"info","message":"Posts obtidos com sucesso"}
 {"level":"info","message":"Posts obtidos com sucesso"}
+{"level":"info","message":"Posts obtidos com sucesso"}
+{"error":{},"level":"error","message":"Falha ao obter o post","slug":"angular-primeiros-passosd"}
