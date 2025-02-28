@@ -2,16 +2,18 @@ const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
 async function main() {
+
     const author = {
         name: "Ana Beatriz",
         username: "anabeatriz_dev",
+        email: "ana@gmail.com",
         avatar: "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/authors/anabeatriz_dev.png",
     };
 
     const ana = await prisma.user.upsert({
         where: { username: author.username },
-        update: {},
-        create: author
+        update: { email: "ana@gmail.com" },
+        create: author,
     })
 
     console.log('Author created', ana)

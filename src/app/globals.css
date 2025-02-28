@@ -34,9 +34,7 @@ a:visited {
   color: #81FE88;
 }
 
-.grid {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: space-between;
+::backdrop {
+  background-color: #171D1F;
+  opacity: 0.8;
 }

@@ -1,40 +1,47 @@
-# code-connect
-![](https://github.com/razevedocosta/code-connect/blob/main/public/print.png)
+# Projeto: Jornada do Cliente
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Sistema para controle e acompanhamento das atividades realizadas durante a execução de um projeto
 
-## Getting Started
+## 🔨 Funcionalidades do Sistema
 
-First, run the development server:
+- CRUD de projetos
+- CRUD de usuários
+- CRUD de etapas do projeto
 
-```bash
-npm run dev
-```
+## ✔️ Técnicas e Tecnologias Utilizadas
 
-To up post api
-```bash
-json-server posts.json -p 3042
-```
+As principais técnicas e tecnologias abordadas são:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `Next.js`: Framework para React com recursos de SSR.
+- `Fetch API`: Realizar requisições HTTP para buscar dados.
+- `React Components`: Desenvolvimento de componentes reutilizáveis.
+- `CSS Modules`: Estilização modular e escopada.
+- `Client-Side Navigation`: Navegação eficiente entre páginas com Next.js.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Abrir e Rodar o Projeto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Após baixar o projeto, você pode abrir com seu editor de código preferido. Siga estes passos:
 
-## Learn More
+- Abra o terminal no diretório do projeto.
+- Execute `npm install` para instalar as dependências.
+- Inicie o servidor de desenvolvimento com `npm run dev` ou `yarn dev`
+- Acesse `http://localhost:3000` no navegador para ver o projeto.
 
-To learn more about Next.js, take a look at the following resources:
+- Criar o banco de dados Postgres
+- Atualizar as variáveis de conexão no arquivo .env
+- Executar o comando para gerar a migração para o banco de dados
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📚 Utilizando migrations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Utilização do prisma para gerenciamento das classes do sistema e tabelas no banco de dados
 
-## Deploy on Vercel
+Primeiro comando para vincular o prisma ao banco de dados
+npx prisma migrate dev --name init                              // gerar a migração para o banco de dados
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ex: Precisamos alterar a tabela Usuário e adicionar o campo password. Adicione o campo desejado e execute o comando abaixo
+- npx prisma migrate dev --name add-password-nullable-column    // atualiza a tabela no bd
+- npm run prisma:generate                                       // atualiza o prisma client
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- npm run prisma:seed                                           // caso exista algum valor inicial
 
-
+- npx prisma studio                                             // consultar o banco de dados
